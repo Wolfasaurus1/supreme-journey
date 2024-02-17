@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+</head>
+
+<body>
+
+    <div class="topnav">
+        <h1 style="float: left;color: white; padding-left: 20px;">AutoLAR</h1>
+        <a href="#home">Log out</a>
+        <a href="#home">Profile</a>
+        <a href="#news">Messages</a>
+    </div>
+
+    <div class="sidebar">
+        <a href="/access">My Access</a>
+        <a href="/requests">Requests</a>
+        <a href="/lookup">Lookup</a>
+        <a href="/queue">Queue</a>
+        <a href="/reports">Reports</a>
+        <a href="/system">System</a>
+    </div>
+
+    <div class="content">
+        <h2>My Requests</h2>
+        <button class="button">New Request</button>
+        <button class="button">Delete Request</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Information Repository</th>
+                    <th>Justification</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for request in requests %}
+                <tr>
+                    <td>{{ request.ir.name }}</td>
+                    <td>{{ request.justification }}</td>
+                    <td>{{ request.status }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="2">No records found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
