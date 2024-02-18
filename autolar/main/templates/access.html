@@ -1,21 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2 style="margin: 0; padding: 15px">My Access</h2>
-        <div class="container" style="margin: 1px 16px;">
-            <div class="row" onclick="location.href='/requests';" >
-                <div class="cell"><b>Information Repository</b></div>
-                <div class="cell"><b>Addition Date</b></div>
-            </div>            
-            {% for personIR in personIRs %}
-            <div class="row">
-                <div class="cell">{{ personIR.ir.name }}</div>
-                <div class="cell">{{ personIR.addition_date }}</div>
-            </div>
-            {% empty %}
-            <div>
-                <div class="cell">No records found.</div>
-            </div>
-            {% endfor %}
-          </div>
+<h2 style="margin: 0; padding: 15px">My Access</h2>
+<div class="container" style="margin: 1px 16px;">
+    <div class="row" onclick="location.href='/requests';" >
+        <div class="cell"><b>Information Repository</b></div>
+        <div class="cell"><b>Addition Date</b></div>
+    </div>            
+    {% for personIR in personIRs %}
+    <div class="row">
+        <div class="cell">{{ personIR.ir.name }}</div>
+        <div class="cell">{{ personIR.addition_date }}</div>
+    </div>
+    {% empty %}
+    <div>
+        <div class="cell">No records found.</div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}

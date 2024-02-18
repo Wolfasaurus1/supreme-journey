@@ -1,25 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2 style="margin: 0; padding: 15px">My Access Requests</h2>
-        <!--<button class="button">New Request</button>
-        <button class="button">Delete Request</button>-->
-        <div class="container" style="margin: 1px 16px;">
-            <div class="row">
-                <div class="cell"><b>Information Repository</b></div>
-                <div class="cell"><b>Justification</b></div>
-                <div class="cell"><b>Status</b></div>
-            </div>
-            {% for request in requests %}
-            <div class="row">
-                <div class="cell">{{ request.ir.name }}</div>
-                <div class="cell">{{ request.justification }}</div>
-                <div class="cell">{{ request.status }}</div>
-            </div>
-            {% empty %}
-            <div class="row">
-                <div class="cell">No records found.</td>
-            </div>
-            {% endfor %}
-        </div>
+<h2 style="margin: 0; padding: 15px;">My Access Requests</h2>
+<!--<button class="button">New Request</button>
+<button class="button">Delete Request</button>-->
+<div class="container" style="margin: 1px 16px;">
+    <div class="row">
+        <div class="cell"><b>Information Repository</b></div>
+        <div class="cell"><b>Justification</b></div>
+        <div class="cell"><b>Status</b></div>
+    </div>
+    {% for request in requests %}
+    <div class="row">
+        <div class="cell">{{ request.ir.name }}</div>
+        <div class="cell">{{ request.justification }}</div>
+        <div class="cell">{{ request.status }}</div>
+    </div>
+    {% empty %}
+    <div class="row">
+        <div class="cell">No records found.</td>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
