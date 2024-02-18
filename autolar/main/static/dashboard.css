@@ -35,22 +35,6 @@ body {
     padding: 1px 16px;
 }
 
-table {
-    border-collapse: collapse;
-    width: 100%;
-    table-layout: fixed;
-    margin-top: 15px;
-    background-color: white;
-    border-radius: 5px;
-}
-
-th,
-td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #DDD;
-}
-
 .button {
     background-color: white;
     border: 1px solid black;
@@ -62,4 +46,26 @@ td {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 1px solid #DDD;
+  }
+  
+  .cell {
+    flex: 1; /* Adjust flex basis as needed */
+    padding: 12px;
+    /* Add more styling as needed */
   }

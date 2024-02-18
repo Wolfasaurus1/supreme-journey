@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2 style="text-align: center;color: white; margin: 0; padding: 15px;">AutoLAR</h2>
+        <a href="/access">My Access</a>
+        <a href="/requests">Requests</a>
+        <a href="/lookup">Lookup</a>
+        <a href="/queue">Queue</a>
+        <a href="/reports">Reports</a>
+        <a href="/system">System</a>
+        <a style="margin-top: auto;" href="/system">Messages</a>
+        <a href="/system">Profile</a> 
+        <a href="/system">Sign out</a>
+    </div>
+    <div style="margin-left: 200px">
+    {% block content %}
+    {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,49 +1,21 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
 
-<head>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
-</head>
-
-<body>
-    <div class="sidebar">
-        <h2 style="text-align: center;color: white; margin: 0; padding: 15px;">AutoLAR</h2>
-        <a href="/access">My Access</a>
-        <a href="/requests">Requests</a>
-        <a href="/lookup">Lookup</a>
-        <a href="/queue">Queue</a>
-        <a href="/reports">Reports</a>
-        <a href="/system">System</a>
-        <a style="margin-top: auto;" href="/system">Messages</a>
-        <a href="/system">Profile</a> 
-        <a href="/system">Sign out</a>
-    </div>
-    <div style="margin-left: 200px;">
-        <h2 style="margin: 0; padding: 15px">My Access</h2>
-    </div>
-    <div class="content">
-        <table>
-            <thead>
-                <tr>
-                    <th>Information Repository</th>
-                    <th>Addition Date</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for personIR in personIRs %}
-                <tr>
-                    <td>{{ personIR.ir.name }}</td>
-                    <td>{{ personIR.addition_date }}</td>
-                </tr>
-                {% empty %}
-                <tr>
-                    <td colspan="2">No records found.</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-</body>
-
-</html>
+{% block content %}
+    <h2 style="margin: 0; padding: 15px">My Access</h2>
+        <div class="container" style="margin: 1px 16px;">
+            <div class="row" onclick="location.href='/requests';" >
+                <div class="cell"><b>Information Repository</b></div>
+                <div class="cell"><b>Addition Date</b></div>
+            </div>            
+            {% for personIR in personIRs %}
+            <div class="row">
+                <div class="cell">{{ personIR.ir.name }}</div>
+                <div class="cell">{{ personIR.addition_date }}</div>
+            </div>
+            {% empty %}
+            <div>
+                <div class="cell">No records found.</div>
+            </div>
+            {% endfor %}
+          </div>
+{% endblock %}
