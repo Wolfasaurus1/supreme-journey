@@ -1,29 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-}
-
-.topnav {
-    overflow: hidden;
-    background-color: #172430;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 2;
-}
-
-.topnav a {
-    float: right;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 30px 16px;
-    text-decoration: none;
-    height: 100%;
-}
-
-.topnav a:hover {
-    background-color: #273c4f;
+    background-color: rgb(229, 229, 229);
 }
 
 .sidebar {
@@ -33,28 +11,28 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: white;
+    background-color: #172430;
     overflow-x: hidden;
-    padding-top: 82px;
     border-right: 2px solid lightgray;
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar a {
     padding: 10px 15px;
     text-decoration: none;
     font-size: 18px;
-    color: black;
+    color: white;
     display: block;
 }
 
 .sidebar a:hover {
-    background-color: #DDD;
+    background-color: #293f54;
 }
 
 .content {
     margin-left: 200px;
     padding: 1px 16px;
-    margin-top: 70px;
 }
 
 table {
@@ -62,11 +40,13 @@ table {
     width: 100%;
     table-layout: fixed;
     margin-top: 15px;
+    background-color: white;
+    border-radius: 5px;
 }
 
 th,
 td {
-    padding: 8px;
+    padding: 12px;
     text-align: left;
     border-bottom: 1px solid #DDD;
 }
