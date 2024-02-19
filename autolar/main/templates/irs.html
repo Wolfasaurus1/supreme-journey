@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 style="margin: 0; padding: 15px;">Information Repositories</h2>
+<div class="irs-container">
+    {% for ir in irs %}
+    <div class="ir-container">
+        <h3>{{ir.name}}</h3> 
+        <p>{{ir.description}}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

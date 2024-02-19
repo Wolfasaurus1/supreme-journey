@@ -10,6 +10,7 @@ class Person(models.Model):
 
 class IR(models.Model):
     name = models.CharField(max_length=100)
+    description = models.TextField()
 
 class LAR(models.Model):
     name = models.CharField(max_length=100)

@@ -43,3 +43,10 @@ def requests_view(request):
     requests = Request.objects.all()
     context = {'requests': requests}
     return render(request, "requests.html", context)
+
+
+@login_required(login_url="/login")
+def irs_view(request):
+    irs = IR.objects.all()
+    context = {'irs': irs}
+    return render(request, "irs.html", context)
